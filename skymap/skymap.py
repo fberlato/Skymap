@@ -48,7 +48,9 @@ class Skymap(object):
 
 		if save_path == None:
 			self._save_path = getcwd()+'/skymap.pdf'
-
+                else:
+                        self._save_path = save_path
+                
 		results = load_analysis_results(self._analysis_path)
 		self._ra_samples = np.radians(-np.array(results.samples[0]) + 180.)
 		self._dec_samples = np.radians(np.array(results.samples[1]))
